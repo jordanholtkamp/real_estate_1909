@@ -34,8 +34,9 @@
 # #=> [#<Room:0x00007fccd297dc30...>]
 #
 # pry(main)> house.area
-# #=> 1900
+# #=> \
 
+require 'pry'
 class House
   attr_reader :price, :address, :rooms
   def initialize(price, address)
@@ -52,12 +53,13 @@ class House
     rooms_by_cat = @rooms.find_all {|room| room.category == room_cat}
     rooms_by_cat
   end
-    # rooms_by_cat = []
-    # @rooms.each do |room|
-    #   if room.category = room_cat
-    #     rooms_by_cat << room
-    #   end
-    # end
-    # rooms_by_cat
+
+  def area
+    room_area = []
+    @rooms.each do |room|
+      room_area << room.area
+    end
+    room_area.sum
+  end
 
 end
