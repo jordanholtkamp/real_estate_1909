@@ -54,5 +54,21 @@ class HouseTest < Minitest::Test
     @house.add_room(@room_4)
     assert_equal 1900, @house.area
   end
+
+  def test_price_per_square_foot
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    assert_equal 210.53, @house.price_per_square_foot
+  end
+
+  def test_sort_by_area
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    assert_equal 
+  end
 end
 
