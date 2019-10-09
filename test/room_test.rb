@@ -12,4 +12,14 @@ class RoomTest < Minitest::Test
   def test_it_exists
     assert_instance_of Room, @room
   end
-end 
+
+  def test_it_initalizes
+    assert_equal :bedroom, @room.category
+    assert_equal 10, @room.width
+    assert_equal 13, @room.length
+  end
+
+  def test_area
+    assert_equal 130, @room.area 
+  end
+end
